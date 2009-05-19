@@ -1,12 +1,11 @@
 #!perl
-sub t{($.-1)*$w+$-[0]}
+sub t{$.*$w-$w+$-[0]}
 while(<>){
 @m=split/\s*/;
 $w=push(@f,@m)/$. if!/[lhjk]/;
-$h=t if/w/;
-$p=t if/0/;
+$p[1]=$h=t if/w/;
+$p[0]=t if/0/;
 }
-@p=($p,$h);
 for(@m){
 $f[$h]='0';
 $h+=/l/?1:/h/?-1:/j/?-$w:$w;
